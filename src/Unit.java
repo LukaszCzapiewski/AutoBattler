@@ -13,7 +13,7 @@ public class Unit {
             throw new RuntimeException(e);
         }
     }
-    boolean can_take_damage = true;
+    boolean alive = true;
     String name;
     int current_health;
     int max_health;
@@ -69,17 +69,11 @@ public class Unit {
         this.image = image;
     }
 
-    public void AssignDamage(int dmg) throws IOException {
-        current_health-=dmg;
-        if (current_health<=0){
-            can_take_damage=false;
+    public void Die() {
+            current_health=0;
+            alive=false;
             image=dead;
-
-        }
-
     }
-
-
-
-
 }
+
+

@@ -15,11 +15,11 @@ class DrawPanel extends JPanel {
     private void doDrawing(Graphics g) {
         var g2d = (Graphics2D) g;
         int i =0;
+        //TODO PICTURE FOR DEAD UNITS
         for (Unit hero:party) {
             float a = hero.current_health;
             float b = hero.max_health;
             int c = Math.max((int) (a / b * 120), 0);
-            System.out.println(c);
             g2d.setColor(Color.black);
             g2d.drawString("" + hero.current_health + "/" + hero.max_health,45,40+i*160);
             g2d.setColor(Color.green);
